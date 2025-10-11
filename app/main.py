@@ -3,6 +3,11 @@ Modern Streamlit UI for prime number analyzer.
 Run: streamlit run app/main.py
 """
 
+import sys
+import os
+# Add project root to sys.path to ensure 'src' is importable
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import streamlit as st
 import matplotlib.pyplot as plt
 import io
@@ -92,4 +97,4 @@ with tab3:
 
 # Footer
 st.markdown("---")
-st.markdown("*Powered by XIVIX*")
+st.markdown("Powered by XIVIX")
