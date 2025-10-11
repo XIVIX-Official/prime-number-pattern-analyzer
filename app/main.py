@@ -12,19 +12,20 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import io
 from typing import Tuple
-
 import numpy as np
+import logging
 
 from src.primes import sieve_of_eratosthenes, calculate_gaps, find_twin_primes, analyze_distribution
 from visualizations.plots import plot_prime_distribution, plot_prime_gaps, plot_twin_primes
 
+# Set up logging to debug data issues
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
-# Custom CSS for modern, stylish look
+# Custom CSS for modern look, excluding .stMetric to avoid conflicts
 st.markdown("""
     <style>
     .main {background-color: #f0f2f6;}
-    .stMetric {background-color: #ffffff; border-radius: 10px; padding: 10px;}
-    .stPlotlyChart {border-radius: 10px;}
     h1 {color: #1f77b4; font-family: 'Segoe UI', sans-serif;}
     .stSlider > div > div > div > div {background-color: #1f77b4;}
     </style>
@@ -44,23 +45,33 @@ num_bins = st.sidebar.slider("Histogram Bins (for Gaps/Distribution)", 10, 100, 
 # Generate primes once
 @st.cache_data
 def get_primes(limit: int):
-    return sieve_of_eratosthenes(limit)
+    logger.debug(f"Generating primes up to {limit}")
+    primes = sieve_of_eratosthenes(limit)
+    logger.debug(f"Generated {len(primes)} primes")
+    return primes
 
 primes = get_primes(limit)
 gaps = calculate_gaps(primes)
 p1, p2 = find_twin_primes(primes)
 dist_bins, dist_counts = analyze_distribution(primes, num_bins)
 
-# Metrics row
+# Log data to debug
+logger.debug(f"Primes count: {len(primes)}")
+logger.debug(f"Gaps: {gaps[:10] if len(gaps) > 0 else 'No gaps'}")
+logger.debug(f"Twin pairs count: {len(p1)}")
+logger.debug(f"Mean gap: {np.mean(gaps) if len(gaps) > 0 else 'N/A'}")
+
+# Metrics row with simplified rendering
+st.subheader("📊 Key Statistics")
 col1, col2, col3, col4 = st.columns(4)
 with col1:
-    st.metric("Total Primes", f"{len(primes):,}")
+    st.metric(label="Total Primes", value=f"{len(primes):,}")
 with col2:
-    st.metric("Max Gap", f"{np.max(gaps) if len(gaps)>0 else 0}")
+    st.metric(label="Max Gap", value=f"{int(np.max(gaps)) if len(gaps) > 0 else 0}")
 with col3:
-    st.metric("Twin Pairs", f"{len(p1)}")
+    st.metric(label="Twin Pairs", value=f"{len(p1)}")
 with col4:
-    st.metric("Mean Gap", f"{np.mean(gaps):.2f}" if len(gaps)>0 else "N/A")
+    st.metric(label="Mean Gap", value=f"{float(np.mean(gaps)):.2f}" if len(gaps) > 0 else "N/A")
 
 st.markdown("---")
 
