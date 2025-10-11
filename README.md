@@ -9,7 +9,7 @@ Analyze and visualize prime number patterns, including distribution, gaps, and t
 - CLI for quick plots.
 
 ## Installation
-1. Clone the repo: `git clone https://github.com/XIVIX/prime-number-pattern-analyzer.git`
+1. Clone the repo: `git clone https://github.com/XIVIX-Official/prime-number-pattern-analyzer.git`
 2. Install dependencies: `pip install -r requirements.txt`
 3. Run the UI: `streamlit run app/main.py`
 4. Or CLI: `python main.py --limit 10000 --plot gaps`
