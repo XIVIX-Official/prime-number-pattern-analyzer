@@ -20,19 +20,19 @@ Analyze and visualize prime number patterns, including distribution, gaps, and t
 
 ## Project Structure
 prime-number-pattern-analyzer/
-├── src/                 # Core logic
-│   └── primes.py
-├── visualizations/      # Matplotlib plots
-│   └── plots.py
-├── app/                 # Streamlit UI
-│   └── main.py
-├── tests/               # Unit tests
-│   └── test_primes.py
-├── main.py              # CLI entry
-├── requirements.txt
-├── README.md
-├── LICENSE
-└── .gitignore
+- ├── src/                 # Core logic
+- │   └── primes.py
+- ├── visualizations/      # Matplotlib plots
+- │   └── plots.py
+- ├── app/                 # Streamlit UI
+- │   └── main.py
+- ├── tests/               # Unit tests
+- │   └── test_primes.py
+- ├── main.py              # CLI entry
+- ├── requirements.txt
+- ├── README.md
+- ├── LICENSE
+- └── .gitignore
 
 ## Contributing
 1. Fork and branch: `git checkout -b feature/your-feature`.
