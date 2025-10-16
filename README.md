@@ -55,7 +55,25 @@ You need to have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/
     ```
     This will create a `dist` folder with the optimized, static assets for your application.
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support & Contact
+
+- **Issues**: Report bugs and request features via [GitHub Issues](https://github.com/XIVIX-Official/prime-number-pattern-analyzer/issues)
+- **Discussions**: Join community discussions in [GitHub Discussions](https://github.com/XIVIX-Official/prime-number-pattern-analyzer/discussions)
+- **Email**: info@codexustechnologies.com
+
+## Community
+
+Join our community to discuss medicinal plants, share research, and collaborate:
+
+- GitHub Discussions - [GitHub Discussions](https://github.com/XIVIX-Official/prime-number-pattern-analyzer/discussions)
+- Discord Channel - [XIVIX](https://discord.gg/U97cQvsA)
+
 ---
 
 **Powered by XIVIX**
-Project inspired by the beauty and complexity of number theory.
+
+*Project inspired by the beauty and complexity of number theory.*
