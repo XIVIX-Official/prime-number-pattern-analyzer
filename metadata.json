@@ -1,0 +1,5 @@
+{
+  "name": "Prime Number Pattern Analyzer",
+  "description": "An advanced tool for professionals and students to analyze and visualize prime number patterns, including distribution, gaps between primes, and twin prime occurrences within a specified numerical range.",
+  "requestFramePermissions": []
+}
