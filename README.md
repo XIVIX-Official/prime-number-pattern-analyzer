@@ -4,6 +4,8 @@ An advanced tool for professionals and students to analyze and visualize prime n
 
 This application is built with React, TypeScript, and Tailwind CSS, featuring interactive charts powered by Recharts.
 
+![Prime Number Pattern Analyzer Logo](./icons/icon-512x512.png)
+
 ## Features
 
 - **Prime Number Generation**: Utilizes the Sieve of Eratosthenes to efficiently generate prime numbers up to 2,000,000.
